@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | BancaCompara',
   },
   description: 'Compara tarjetas de crédito, débito y cuentas de ahorro de todos los bancos en México. Encuentra la mejor opción para ti.',
-  metadataBase: new URL('https://bancacompara.mx'),
+  metadataBase: new URL('https://bancacompara.vercel.app'),
   openGraph: {
     siteName: 'BancaCompara',
     locale: 'es_MX',
