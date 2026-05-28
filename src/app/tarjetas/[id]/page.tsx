@@ -166,7 +166,7 @@ export default async function DetalleProductoPage({ params }: { params: Promise<
       )}
 
       {/* Seguros */}
-      {producto.seguros && producto.seguros.length > 0 && (
+      {'seguros' in producto && producto.seguros.length > 0 && (
         <div className="bg-white rounded-2xl border border-gray-100 p-6">
           <h2 className="font-bold text-gray-900 mb-4">Seguros incluidos</h2>
           <ul className="space-y-2">
