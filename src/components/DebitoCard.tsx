@@ -1,6 +1,7 @@
 'use client';
 import { TarjetaDebito } from '@/types';
 import BancoLogo from './BancoLogo';
+import CardArt from './CardArt';
 import { colorPuntaje, colorBgPuntaje } from '@/utils/puntaje';
 
 interface Props {
@@ -17,6 +18,8 @@ export default function DebitoCard({ tarjeta, seleccionada, onSeleccionar, enCom
         seleccionada ? 'border-blue-500 shadow-lg shadow-blue-100' : 'border-gray-100 hover:border-gray-300 hover:shadow-md'
       }`}
     >
+      <CardArt banco={tarjeta.banco} nombre={tarjeta.nombre} color={tarjeta.color} tipo="debito" />
+
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
           <BancoLogo banco={tarjeta.banco} color={tarjeta.color} />
