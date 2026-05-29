@@ -18,44 +18,34 @@ export default function CardArt({ banco, nombre, color, tipo }: Props) {
 
   return (
     <div
-      className="w-full rounded-2xl overflow-hidden relative"
-      style={{
-        paddingTop: '63%',
-        background: `linear-gradient(135deg, ${color} 0%, ${dark} 100%)`,
-      }}
+      className="w-full h-36 rounded-2xl overflow-hidden relative flex flex-col justify-between p-4"
+      style={{ background: `linear-gradient(135deg, ${color} 0%, ${dark} 100%)` }}
     >
       {/* Círculos decorativos */}
-      <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-white/10" />
-      <div className="absolute -bottom-8 right-8 w-28 h-28 rounded-full bg-white/10" />
-      <div className="absolute top-1/2 -left-6 w-20 h-20 rounded-full bg-black/10" />
+      <div className="absolute top-0 right-0 w-32 h-32 rounded-full translate-x-8 -translate-y-8 bg-white opacity-10" />
+      <div className="absolute bottom-0 right-4 w-20 h-20 rounded-full translate-y-6 bg-white opacity-10" />
 
-      {/* Contenido */}
-      <div className="absolute inset-0 p-5 flex flex-col justify-between">
-
-        {/* Fila superior */}
-        <div className="flex items-start justify-between">
-          <p className="text-white font-bold text-sm leading-tight drop-shadow">{banco}</p>
-          {/* Chip */}
-          <div className="w-9 h-7 rounded-md bg-yellow-300/80 grid grid-cols-3 gap-px p-1 shadow-inner">
-            {Array.from({ length: 9 }).map((_, i) => (
-              <div key={i} className="bg-yellow-500/40 rounded-[1px]" />
-            ))}
-          </div>
+      {/* Fila superior */}
+      <div className="flex items-start justify-between relative z-10">
+        <p className="text-white font-bold text-sm leading-tight">{banco}</p>
+        {/* Chip */}
+        <div className="w-8 h-6 rounded-md grid grid-cols-3 gap-px p-1" style={{ backgroundColor: 'rgba(255,215,0,0.75)' }}>
+          {Array.from({ length: 9 }).map((_, i) => (
+            <div key={i} className="rounded-[1px] bg-yellow-700 opacity-40" />
+          ))}
         </div>
+      </div>
 
-        {/* Nombre del producto */}
-        <p className="text-white/60 text-[11px] font-medium tracking-wide truncate">{nombre}</p>
+      {/* Nombre del producto */}
+      <p className="text-white text-xs font-medium relative z-10 truncate opacity-70">{nombre}</p>
 
-        {/* Fila inferior */}
-        <div className="flex items-end justify-between">
-          <p className="text-white/40 text-xs font-mono tracking-widest">●●●● ●●●● ●●●●</p>
-          {/* Indicador de red (genérico) */}
-          <div className="flex items-center -space-x-2">
-            <div className="w-6 h-6 rounded-full bg-white/30" />
-            <div className="w-6 h-6 rounded-full bg-white/20" />
-          </div>
+      {/* Fila inferior */}
+      <div className="flex items-center justify-between relative z-10">
+        <p className="text-white text-xs font-mono opacity-40 tracking-widest">●●●● ●●●●</p>
+        <div className="flex -space-x-2">
+          <div className="w-5 h-5 rounded-full bg-white opacity-30" />
+          <div className="w-5 h-5 rounded-full bg-white opacity-20" />
         </div>
-
       </div>
     </div>
   );

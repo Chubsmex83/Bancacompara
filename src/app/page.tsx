@@ -85,10 +85,8 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {topCredito.map((t, i) => (
             <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
-              <div className="relative">
-                <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="credito" />
-                <span className="absolute top-2 left-2 text-xl font-bold text-white/60">#{i + 1}</span>
-              </div>
+              <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
+              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="credito" />
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Anualidad</span>
                 <span className="font-medium">{t.anualidad === 0 ? <span className="text-green-600">Gratis</span> : `$${t.anualidad.toLocaleString()}`}</span>
@@ -115,10 +113,8 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {topDebito.map((t, i) => (
             <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
-              <div className="relative">
-                <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="debito" />
-                <span className="absolute top-2 left-2 text-xl font-bold text-white/60">#{i + 1}</span>
-              </div>
+              <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
+              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="debito" />
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Comisión</span>
                 <span className="font-medium">{t.comisionMensual === 0 ? <span className="text-green-600">Gratis</span> : `$${t.comisionMensual}/mes`}</span>
@@ -145,10 +141,8 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {topAhorro.map((t, i) => (
             <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
-              <div className="relative">
-                <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="ahorro" />
-                <span className="absolute top-2 left-2 text-xl font-bold text-white/60">#{i + 1}</span>
-              </div>
+              <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
+              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="ahorro" />
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Tasa anual</span>
                 <span className="font-bold text-green-600">{t.tasaAnual}%</span>
