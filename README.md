@@ -2,6 +2,9 @@
 
 Comparador de tarjetas de crédito, débito y cuentas de ahorro de los principales bancos en México. Encuentra la opción que más te conviene según tu perfil: CAT, anualidad, rendimiento, beneficios y más.
 
+**Sitio en producción:** [bancacompara.vercel.app](https://bancacompara.vercel.app)
+**Repositorio:** [github.com/Chubsmex83/Bancacompara](https://github.com/Chubsmex83/Bancacompara)
+
 ## Funcionalidades
 
 - **Listado con filtros** — busca por banco, ordena por CAT, anualidad, tasa o puntaje, filtra sin anualidad o con rendimiento
@@ -10,6 +13,9 @@ Comparador de tarjetas de crédito, débito y cuentas de ahorro de los principal
 - **Rankings por categoría** — mejores sin anualidad, menor CAT, viajeros, mayor rendimiento, mejor tasa, para principiantes
 - **Calculadora de costos** — estima cuánto pagas realmente con cada tarjeta según tu gasto mensual
 - **Página de detalle** — información completa de cada producto con beneficios, requisitos y seguros incluidos
+- **Ilustración de tarjeta** — cada producto muestra una tarjeta estilizada con el color del banco, chip y gradiente propio
+- **Publicidad contextual** — sección de promociones MSI de Amazon, Liverpool y Apple al final del home
+- **Estadísticas en home** — tarjeta con el conteo total del catálogo por categoría
 
 ## Productos incluidos
 
@@ -57,7 +63,7 @@ npm run lint     # ESLint
 src/
 ├── app/
 │   ├── layout.tsx              # Layout raíz con Navbar y footer
-│   ├── page.tsx                # Home — top productos y publicidad
+│   ├── page.tsx                # Home — top productos, stats y publicidad
 │   ├── sitemap.ts              # Sitemap dinámico con todas las rutas
 │   ├── not-found.tsx           # Página 404 personalizada
 │   ├── error.tsx               # Error boundary global
@@ -82,6 +88,7 @@ src/
 │   ├── TarjetaCreditoCard.tsx
 │   ├── DebitoCard.tsx
 │   ├── AhorroCard.tsx
+│   ├── CardArt.tsx             # Ilustración de tarjeta bancaria con gradiente
 │   ├── BancoLogo.tsx           # Avatar de banco con iniciales y color
 │   └── AdBanner.tsx            # Sección de publicidad MSI
 ├── data/
@@ -108,6 +115,10 @@ Añade un objeto al JSON correspondiente en `src/data/`. El campo `id` debe ser 
 ## Publicidad
 
 La sección de publicidad está en `src/components/AdBanner.tsx`. Actualmente muestra promociones estáticas de Amazon, Liverpool y Apple con meses sin intereses. Para integrar Google AdSense, reemplaza el contenido del componente `AdSection`.
+
+## Ilustraciones de tarjeta
+
+El componente `CardArt.tsx` genera una ilustración estilizada para cada producto usando el color del banco como gradiente. No utiliza imágenes ni logos reales de bancos — todo es generado con CSS para evitar problemas de derechos de autor.
 
 ---
 
