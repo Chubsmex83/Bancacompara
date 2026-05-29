@@ -37,15 +37,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="grid grid-cols-3 gap-4">
-        {stats.map((s) => (
-          <Link key={s.href} href={s.href} className="bg-white rounded-2xl p-6 text-center border border-gray-100 hover:shadow-md transition-shadow">
-            <div className={`w-12 h-12 ${s.color} rounded-xl mx-auto mb-3`} />
-            <p className="text-3xl font-bold text-gray-900">{s.value}</p>
-            <p className="text-sm text-gray-500 mt-1">{s.label}</p>
-          </Link>
-        ))}
+      {/* Stats card */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-8 overflow-hidden shadow-xl">
+        {/* Círculos decorativos */}
+        <div className="absolute -top-10 -right-10 w-48 h-48 bg-white/5 rounded-full" />
+        <div className="absolute -bottom-12 -left-12 w-56 h-56 bg-white/5 rounded-full" />
+
+        <div className="relative z-10 flex flex-col gap-6">
+          {/* Header tarjeta */}
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-white/60 text-xs uppercase tracking-widest font-medium">BancaCompara</p>
+              <p className="text-white font-bold text-lg mt-0.5">Catálogo completo</p>
+            </div>
+            <div className="w-12 h-8 bg-white/20 rounded-md flex items-center justify-center">
+              <div className="w-7 h-5 bg-yellow-400/80 rounded-sm" />
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-4">
+            {stats.map((s) => (
+              <Link key={s.href} href={s.href} className="group text-center">
+                <p className="text-3xl font-bold text-white group-hover:scale-105 transition-transform inline-block">{s.value}</p>
+                <p className="text-white/60 text-xs mt-1 leading-tight">{s.label}</p>
+              </Link>
+            ))}
+          </div>
+
+          {/* Footer */}
+          <div className="flex items-center justify-between border-t border-white/20 pt-4">
+            <p className="text-white/40 text-xs">México · {new Date().getFullYear()}</p>
+            <Link href="/tarjetas" className="text-white/80 text-xs font-medium hover:text-white transition-colors">
+              Ver todos →
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Top Crédito */}
