@@ -86,7 +86,7 @@ export default function Home() {
           {topCredito.map((t, i) => (
             <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
               <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
-              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="credito" />
+              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="credito" nameOffset />
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Anualidad</span>
                 <span className="font-medium">{t.anualidad === 0 ? <span className="text-green-600">Gratis</span> : `$${t.anualidad.toLocaleString()}`}</span>
@@ -114,7 +114,7 @@ export default function Home() {
           {topDebito.map((t, i) => (
             <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
               <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
-              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="debito" />
+              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="debito" nameOffset />
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Comisión</span>
                 <span className="font-medium">{t.comisionMensual === 0 ? <span className="text-green-600">Gratis</span> : `$${t.comisionMensual}/mes`}</span>
@@ -142,7 +142,7 @@ export default function Home() {
           {topAhorro.map((t, i) => (
             <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
               <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
-              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="ahorro" />
+              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="ahorro" nameOffset />
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Tasa anual</span>
                 <span className="font-bold text-green-600">{t.tasaAnual}%</span>
