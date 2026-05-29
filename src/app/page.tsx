@@ -85,7 +85,7 @@ export default function Home() {
           {topCredito.map((t, i) => (
             <div key={t.id} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl font-bold text-gray-500">#{i + 1}</span>
+                <span className="text-2xl font-bold text-gray-700">#{i + 1}</span>
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold"
                   style={{ backgroundColor: t.color }}
@@ -124,7 +124,7 @@ export default function Home() {
           {topDebito.map((t, i) => (
             <div key={t.id} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl font-bold text-gray-500">#{i + 1}</span>
+                <span className="text-2xl font-bold text-gray-700">#{i + 1}</span>
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold"
                   style={{ backgroundColor: t.color }}
@@ -163,7 +163,7 @@ export default function Home() {
           {topAhorro.map((t, i) => (
             <div key={t.id} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl font-bold text-gray-500">#{i + 1}</span>
+                <span className="text-2xl font-bold text-gray-700">#{i + 1}</span>
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold"
                   style={{ backgroundColor: t.color }}
