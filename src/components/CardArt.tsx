@@ -27,7 +27,7 @@ export default function CardArt({ banco, nombre, color, tipo, nameOffset }: Prop
       <div className="absolute bottom-0 right-4 w-20 h-20 rounded-full translate-y-6 bg-white opacity-10" />
 
       {/* Fila superior */}
-      <div className={`flex items-start justify-between relative z-10 ${nameOffset ? 'mt-3' : ''}`}>
+      <div className={`flex items-start justify-between relative z-10 ${nameOffset ? 'mt-2' : ''}`}>
         <p className="text-white font-bold text-sm leading-tight">{banco}</p>
         {/* Chip */}
         <div className="w-8 h-6 rounded-md grid grid-cols-3 gap-px p-1" style={{ backgroundColor: 'rgba(255,215,0,0.75)' }}>
