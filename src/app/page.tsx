@@ -4,7 +4,6 @@ import tarjetasDebito from '@/data/tarjetas-debito.json';
 import cuentasAhorro from '@/data/cuentas-ahorro.json';
 import { colorPuntaje } from '@/utils/puntaje';
 import AdSection from '@/components/AdBanner';
-import CardArt from '@/components/CardArt';
 
 const stats = [
   { label: 'Tarjetas de crédito', value: tarjetasCredito.length, href: '/tarjetas?tipo=credito', color: 'bg-blue-500' },
@@ -84,22 +83,33 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {topCredito.map((t, i) => (
-            <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
-              <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
-              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="credito" />
+            <div key={t.id} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold"
+                  style={{ backgroundColor: t.color }}
+                >
+                  {t.banco.slice(0, 2).toUpperCase()}
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500">{t.banco}</p>
+                  <p className="font-semibold text-sm text-gray-900">{t.nombre}</p>
+                </div>
+              </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Anualidad</span>
                 <span className="font-medium">{t.anualidad === 0 ? <span className="text-green-600">Gratis</span> : `$${t.anualidad.toLocaleString()}`}</span>
               </div>
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-sm mt-1">
                 <span className="text-gray-500">CAT</span>
                 <span className="font-medium">{t.cat}%</span>
               </div>
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-sm mt-1">
                 <span className="text-gray-500">Puntaje</span>
                 <span className="font-semibold" style={{ color: colorPuntaje(t.puntaje) }}>★ {t.puntaje}</span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
@@ -112,22 +122,33 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {topDebito.map((t, i) => (
-            <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
-              <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
-              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="debito" />
+            <div key={t.id} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold"
+                  style={{ backgroundColor: t.color }}
+                >
+                  {t.banco.slice(0, 2).toUpperCase()}
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500">{t.banco}</p>
+                  <p className="font-semibold text-sm text-gray-900">{t.nombre}</p>
+                </div>
+              </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Comisión</span>
                 <span className="font-medium">{t.comisionMensual === 0 ? <span className="text-green-600">Gratis</span> : `$${t.comisionMensual}/mes`}</span>
               </div>
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-sm mt-1">
                 <span className="text-gray-500">Rendimiento</span>
                 <span className="font-medium text-green-600">{t.rendimientoAnual ? `${t.rendimientoAnual}%` : '—'}</span>
               </div>
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-sm mt-1">
                 <span className="text-gray-500">Puntaje</span>
                 <span className="font-semibold" style={{ color: colorPuntaje(t.puntaje) }}>★ {t.puntaje}</span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
@@ -140,22 +161,33 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {topAhorro.map((t, i) => (
-            <Link key={t.id} href={`/tarjetas/${t.id}`} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow flex flex-col gap-3">
-              <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
-              <CardArt banco={t.banco} nombre={t.nombre} color={t.color} tipo="ahorro" />
+            <div key={t.id} className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md transition-shadow">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl font-bold text-gray-200">#{i + 1}</span>
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold"
+                  style={{ backgroundColor: t.color }}
+                >
+                  {t.banco.slice(0, 2).toUpperCase()}
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500">{t.banco}</p>
+                  <p className="font-semibold text-sm text-gray-900">{t.nombre}</p>
+                </div>
+              </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Tasa anual</span>
                 <span className="font-bold text-green-600">{t.tasaAnual}%</span>
               </div>
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-sm mt-1">
                 <span className="text-gray-500">Comisión</span>
                 <span className="font-medium">{t.comisionMensual === 0 ? <span className="text-green-600">Gratis</span> : `$${t.comisionMensual}/mes`}</span>
               </div>
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-sm mt-1">
                 <span className="text-gray-500">Puntaje</span>
                 <span className="font-semibold" style={{ color: colorPuntaje(t.puntaje) }}>★ {t.puntaje}</span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
