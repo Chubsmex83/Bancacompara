@@ -20,7 +20,7 @@ export default function CardArt({ banco, nombre, color, tipo }: Props) {
     <div
       className="w-full rounded-2xl overflow-hidden relative"
       style={{
-        aspectRatio: '1.586 / 1',
+        paddingTop: '63%',
         background: `linear-gradient(135deg, ${color} 0%, ${dark} 100%)`,
       }}
     >
